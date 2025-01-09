@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "npx react-scripts start",
-    "build": "npx react-scripts build",
-    "css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch"
+    "watch:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
+    "start:react": "npx react-scripts start",
+    "start": "concurrently \"npm run watch:css\" \"npm run start:react\"",
+    "build": "npx react-scripts build"
   },
   "keywords": [],
   "author": "",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "concurrently": "^9.1.2",
     "tailwindcss": "^3.4.17"
   }
 }
