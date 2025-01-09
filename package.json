@@ -4,10 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css",
     "watch:css": "npx tailwindcss -i ./src/input.css -o ./src/output.css --watch",
     "start:react": "npx react-scripts start",
     "start": "concurrently \"npm run watch:css\" \"npm run start:react\"",
-    "build": "npx react-scripts build"
+    "build": "npm run start:css && react-scripts build"
   },
   "keywords": [],
   "author": "",
