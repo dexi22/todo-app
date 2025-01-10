@@ -58,6 +58,7 @@ export default function useKeyboardNavigation({
 
 		function handleKeyPress(e) {
 			if (editMode) return;
+			if (e.ctrlKey || e.altKey || e.metaKey) return;
 
 			if (handleHomeEndPress(e)) return;
 			if (handleArrowsPress(e)) return;

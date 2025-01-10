@@ -9,6 +9,7 @@ export default function useCreateTaskHotkey({
 	useEffect(() => {
 		const handleCreateTaskHotkey = (e) => {
 			if (editMode || e.key !== 'n') return;
+			if (e.ctrlKey || e.altKey || e.metaKey) return;
 			e.preventDefault();
 			setIsCreatingTask(true);
 			setEditMode(true);

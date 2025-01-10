@@ -17,6 +17,8 @@ export default function useTaskHotkeys({
 }) {
 	return useCallback(
 		(e) => {
+			if (e.ctrlKey || e.altKey || e.metaKey) return;
+
 			if (e.key === 'Enter' && editMode) {
 				e.preventDefault();
 
